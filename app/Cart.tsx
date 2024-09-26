@@ -1,14 +1,14 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-export const SettingsScreen = () => {
+export const CartScreen = () => {
 	return (
 		<View
 			style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
 		>
-			<Text>SettingsScreen</Text>
+			<Text>CartScreen</Text>
 		</View>
 	)
 }
 
-export default SettingsScreen
+export default CartScreen

@@ -1,12 +1,41 @@
-import React from "react";
-import { Text, View } from "react-native";
+import React from 'react'
+import { Button, FlatList, Text, View } from 'react-native'
+import Container from './Container'
+import { StackNavigationProp } from '@react-navigation/stack'
 
-export const HomeScreen = () => {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>HomeScreen</Text>
-    </View>
-  );
-};
+const data = [
+	{
+		name: 'Alex',
+		age: 20,
+	},
+	{
+		name: 'Sasha',
+		age: 22,
+	},
+	{
+		name: 'Alice',
+		age: 19,
+	},
+]
 
-export default HomeScreen;
+interface HomeScreenProps {
+	navigation: StackNavigationProp<any>
+}
+
+export const HomeScreen = ({ navigation }: HomeScreenProps) => {
+	return (
+		<Container>
+			<Text>HomeScreen</Text>
+			<FlatList
+				data={data}
+				renderItem={({ item }) => <Text>{item.name}</Text>}
+			/>
+			<Button
+				title='Перейти в Корзину'
+				onPress={() => navigation.navigate('Cart')}
+			/>
+		</Container>
+	)
+}
+
+export default HomeScreen
