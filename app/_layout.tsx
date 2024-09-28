@@ -1,17 +1,19 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import HomeScreen from './Home'
 import SettingsScreen from './Settings'
 import CartScreen from './Cart'
+import Header from './components/Header'
+import HomeTab from './HomeTab'
 
 const Tab = createBottomTabNavigator()
 
 const RootLayout = () => {
 	return (
 		<Tab.Navigator
-			initialRouteName='Settings'
 			screenOptions={({ route }) => ({
+				tabBarActiveTintColor: 'tomato',
+				tabBarInactiveTintColor: 'gray',
 				tabBarIcon: ({ focused, color, size }) => {
 					let iconName: keyof typeof Ionicons.glyphMap =
 						'information-circle-outline'
@@ -26,17 +28,26 @@ const RootLayout = () => {
 
 					return <Ionicons name={iconName} size={size} color={color} />
 				},
-				tabBarActiveTintColor: 'tomato',
-				tabBarInactiveTintColor: 'gray',
 			})}
 		>
 			<Tab.Screen
-				name='Home'
-				component={HomeScreen}
-				options={{ headerShown: false }}
+				name='HomeTab'
+				component={HomeTab}
+				options={{
+					header: () => <Header title='Главная' />,
+					tabBarLabel: 'Главная',
+				}}
 			/>
-			<Tab.Screen name='Settings' component={SettingsScreen} />
-			<Tab.Screen name='Cart' component={CartScreen} />
+			<Tab.Screen
+				name='Settings'
+				component={SettingsScreen}
+				options={{ tabBarLabel: 'Настройки' }}
+			/>
+			<Tab.Screen
+				name='Cart'
+				component={CartScreen}
+				options={{ tabBarLabel: 'Корзина' }}
+			/>
 		</Tab.Navigator>
 	)
 }

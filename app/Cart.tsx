@@ -1,12 +1,21 @@
+import { StackNavigationProp } from '@react-navigation/stack'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Button, Text, View } from 'react-native'
+import { Navigation } from './shared/types'
 
-export const CartScreen = () => {
+interface HomeScreenProps {
+	navigation: Navigation
+}
+
+const CartScreen = ({ navigation }: HomeScreenProps) => {
 	return (
 		<View
 			style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
 		>
-			<Text>CartScreen</Text>
+			<Button
+				title='На главную'
+				onPress={() => navigation.navigate('Home')}
+			/>
 		</View>
 	)
 }
