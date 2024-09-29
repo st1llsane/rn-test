@@ -8,19 +8,9 @@ interface ContainerProps extends PropsWithChildren<SafeAreaViewProps> {
 
 const Container = ({ children, style, ...rest }: ContainerProps) => {
 	return (
-		<SafeAreaView>
-			<View
-				style={[
-					{
-						margin: 15,
-					},
-					style,
-				]}
-				{...rest}
-			>
-				{children}
-			</View>
-		</SafeAreaView>
+		<View className='m-4' {...rest}>
+			{children}
+		</View>
 	)
 }
 
