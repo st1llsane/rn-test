@@ -3,8 +3,9 @@ import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import SettingsScreen from './Settings'
 import CartScreen from './Cart'
-import Header from './components/Header'
 import HomeTab from './HomeTab'
+import Header from './components/Header'
+import '../global.css'
 
 const Tab = createBottomTabNavigator()
 

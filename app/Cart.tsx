@@ -1,7 +1,7 @@
 import { StackNavigationProp } from '@react-navigation/stack'
 import React from 'react'
 import { Button, Text, View } from 'react-native'
-import { Navigation } from './shared/types'
+import { Navigation } from '../shared/types'
 
 interface HomeScreenProps {
 	navigation: Navigation

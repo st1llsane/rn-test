@@ -1,5 +1,6 @@
-import React from 'react'
-import { SafeAreaView, Text, View } from 'react-native'
+import { SafeAreaView, View } from 'react-native'
+import { Box } from './ui/box/Box'
+import { Text } from './ui/text/Text'
 
 interface HeaderProps {
 	title: string
@@ -8,18 +9,11 @@ interface HeaderProps {
 const Header = ({ title }: HeaderProps) => {
 	return (
 		<SafeAreaView style={{ backgroundColor: '#6200EE' }}>
-			<View
-				style={{
-					height: 40,
-					justifyContent: 'center',
-				}}
-			>
-				<Text
-					style={{ color: 'white', fontSize: 20, textAlign: 'center' }}
-				>
+			<Box className='h-10 justify-center'>
+				<Text className='color-white text-xl font-medium text-center'>
 					{title}
 				</Text>
-			</View>
+			</Box>
 		</SafeAreaView>
 	)
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import NewsScreen from './screens/home/News'
-import WallerScreen from './screens/home/Wallet'
 import { Navigation } from './shared/types'
-import HomeScreen from './screens/home/Home'
+import HomeScreen from './screens/Home/Home'
+import NewsScreen from './screens/Home/News'
+import WallerScreen from './screens/Home/Wallet'
+import { verifyInstallation } from 'nativewind'
 
 const data = [
 	{
@@ -27,6 +28,8 @@ interface HomeTabProps {
 const Stack = createStackNavigator()
 
 const HomeTab = ({ navigation }: HomeTabProps) => {
+	// verifyInstallation()
+
 	return (
 		<Stack.Navigator screenOptions={{ headerShown: false }}>
 			<Stack.Screen
