@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react'
-import { SafeAreaView, View, ViewStyle } from 'react-native'
+import { View, ViewStyle } from 'react-native'
 import { SafeAreaViewProps } from 'react-native-safe-area-context'
 
 interface ContainerProps extends PropsWithChildren<SafeAreaViewProps> {

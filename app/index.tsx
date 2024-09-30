@@ -2,16 +2,16 @@ import '../gesture-handler'
 import '../global.css'
 import 'react-native-reanimated'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import React, { useState } from 'react'
+import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import SettingsScreen from './Settings'
-import CartScreen from './Cart'
-import HomeTab from './HomeTab'
-import Header from './components/Header'
-import { GluestackUIProvider } from './components/ui/gluestack-ui-provider/GluestackUIProvider'
+import { GluestackUIProvider } from '../components/ui/gluestack-ui-provider/GluestackUIProvider'
 // import { StatusBar } from 'expo-status-bar'
 import { View } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import Header from '@components/Header'
+import LibraryScreen from './(library)'
+import ProfileScreen from './(profile)'
+import HomeScreen from './(home)'
 
 const Tab = createBottomTabNavigator()
 
@@ -44,21 +44,21 @@ const App = () => {
 						})}
 					>
 						<Tab.Screen
-							name='HomeTab'
-							component={HomeTab}
+							name='HomeScreen'
+							component={HomeScreen}
 							options={{
 								header: () => <Header title='Главная' />,
 								tabBarLabel: 'Главная',
 							}}
 						/>
 						<Tab.Screen
-							name='Settings'
-							component={SettingsScreen}
+							name='LibraryScreen'
+							component={LibraryScreen}
 							options={{ tabBarLabel: 'Настройки' }}
 						/>
 						<Tab.Screen
-							name='Cart'
-							component={CartScreen}
+							name='ProfileScreen'
+							component={ProfileScreen}
 							options={{ tabBarLabel: 'Корзина' }}
 						/>
 					</Tab.Navigator>

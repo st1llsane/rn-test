@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button, View } from 'react-native'
+import { Button } from 'react-native'
 import { Navigation } from '../../shared/types'
+import { Box } from '@components/ui/box/Box'
 
 interface HomeScreenProps {
 	navigation: Navigation
@@ -8,7 +9,7 @@ interface HomeScreenProps {
 
 export const HomeScreen = ({ navigation }: HomeScreenProps) => {
 	return (
-		<View>
+		<Box>
 			<Button
 				title='Новости'
 				onPress={() => navigation.navigate('News')}
@@ -17,7 +18,7 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
 				title='Кошелек'
 				onPress={() => navigation.navigate('Wallet')}
 			/>
-		</View>
+		</Box>
 	)
 }
 

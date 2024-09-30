@@ -1,32 +1,12 @@
-import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Navigation } from './shared/types'
-import HomeScreen from './screens/Home/Home'
-import NewsScreen from './screens/Home/News'
-import WallerScreen from './screens/Home/Wallet'
-
-const data = [
-	{
-		name: 'Alex',
-		age: 20,
-	},
-	{
-		name: 'Sasha',
-		age: 22,
-	},
-	{
-		name: 'Alice',
-		age: 19,
-	},
-]
-
-interface HomeTabProps {
-	navigation: Navigation
-}
+import React from 'react'
+import HomeScreen from '.'
+import NewsScreen from './news'
+import WallerScreen from './wallet'
 
 const Stack = createStackNavigator()
 
-const HomeTab = ({ navigation }: HomeTabProps) => {
+const HomeLayout = () => {
 	return (
 		<Stack.Navigator screenOptions={{ headerShown: false }}>
 			<Stack.Screen
@@ -48,4 +28,4 @@ const HomeTab = ({ navigation }: HomeTabProps) => {
 	)
 }
 
-export default HomeTab
+export default HomeLayout
