@@ -1,7 +1,7 @@
-import { Text } from './ui/text/Text'
 import { Button, ButtonIcon } from './ui/button/Button'
 import { AlignJustify } from 'lucide-react-native'
 import { HStack } from './ui/hstack/HStack'
+import { Text } from './ui/text/Text'
 
 interface HeaderProps {
 	title: string

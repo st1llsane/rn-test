@@ -4,21 +4,20 @@ import 'react-native-reanimated'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import { GluestackUIProvider } from '../components/ui/gluestack-ui-provider/GluestackUIProvider'
 // import { StatusBar } from 'expo-status-bar'
 import { View } from 'react-native'
+import { GluestackUIProvider } from '@ui/gluestack-ui-provider/GluestackUIProvider'
+import HomeScreen from './home/home-screen'
+import LibraryScreen from './library/library-screen'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import Header from '@components/Header'
-import LibraryScreen from './(library)'
-import ProfileScreen from './(profile)'
-import HomeScreen from './(home)'
+import ProfileScreen from './profile/profile-screen'
 
 const Tab = createBottomTabNavigator()
 
 const App = () => {
 	return (
 		<View className='w-full h-full'>
-			{/* <StatusBar style='dark' /> */}
 			<GluestackUIProvider mode='dark'>
 				<SafeAreaProvider>
 					<Tab.Navigator
@@ -29,12 +28,14 @@ const App = () => {
 								let iconName: keyof typeof Ionicons.glyphMap =
 									'information-circle-outline'
 
-								if (route.name === 'Home') {
+								if (route.name === 'home') {
+									iconName = focused ? 'home' : 'home-outline'
+								} else if (route.name === 'library') {
+									iconName = focused ? 'book' : 'book-outline'
+								} else if (route.name === 'profile') {
 									iconName = focused
-										? 'information-circle'
-										: 'information-circle-outline'
-								} else if (route.name === 'Settings') {
-									iconName = focused ? 'list' : 'list-outline'
+										? 'person-circle'
+										: 'person-circle-outline'
 								}
 
 								return (
@@ -44,7 +45,7 @@ const App = () => {
 						})}
 					>
 						<Tab.Screen
-							name='HomeScreen'
+							name='home'
 							component={HomeScreen}
 							options={{
 								header: () => <Header title='Главная' />,
@@ -52,18 +53,21 @@ const App = () => {
 							}}
 						/>
 						<Tab.Screen
-							name='LibraryScreen'
+							name='library'
 							component={LibraryScreen}
-							options={{ tabBarLabel: 'Настройки' }}
+							options={{ tabBarLabel: 'Библиотека' }}
 						/>
 						<Tab.Screen
-							name='ProfileScreen'
+							name='profile'
 							component={ProfileScreen}
-							options={{ tabBarLabel: 'Корзина' }}
+							options={{ tabBarLabel: 'Профиль' }}
 						/>
 					</Tab.Navigator>
 				</SafeAreaProvider>
 			</GluestackUIProvider>
+			{/* <SafeAreaView>
+			<Text>fjslkfjlds</Text>
+		</SafeAreaView> */}
 		</View>
 	)
 }

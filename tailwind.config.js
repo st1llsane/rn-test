@@ -5,10 +5,10 @@ module.exports = {
 	darkMode: 'media',
 	content: [
 		'./app/**/*.{tsx,jsx,ts,js}',
-		'./app/shared/**/*.{tsx,jsx,ts,js}',
-		'./app/components/**/*.{tsx,jsx,ts,js}',
-		'./app/components/ui/**/*.{tsx,jsx,ts,js}',
-		'./app/screens/**/*.{tsx,jsx,ts,js}',
+		'./shared/**/*.{tsx,jsx,ts,js}',
+		'./components/**/*.{tsx,jsx,ts,js}',
+		'./components/ui/**/*.{tsx,jsx,ts,js}',
+		'./screens/**/*.{tsx,jsx,ts,js}',
 	],
 	presets: [require('nativewind/preset')],
 	theme: {
