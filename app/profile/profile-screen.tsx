@@ -1,13 +1,13 @@
 import React from 'react'
 import { Button } from 'react-native'
 import { Navigation } from '../../shared/types'
-import { Box } from '@components/ui/box/Box'
+import { Box } from '@components/ui/box/box'
 
 interface ProfileScreenProps {
 	navigation: Navigation
 }
 
-export const ProfileScreen = ({ navigation }: ProfileScreenProps) => {
+const ProfileScreen = ({ navigation }: ProfileScreenProps) => {
 	return (
 		<Box>
 			<Button

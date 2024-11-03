@@ -1,22 +1,23 @@
 import React from 'react'
 import { Button } from 'react-native'
 import { Navigation } from '../../shared/types'
-import { Box } from '@components/ui/box/Box'
+import { Box } from '@components/ui/box/box'
+import { Text } from '@components/ui/text/text'
 
 interface HomeScreenProps {
 	navigation: Navigation
 }
 
-export const HomeScreen = ({ navigation }: HomeScreenProps) => {
+const HomeScreen = ({ navigation }: HomeScreenProps) => {
 	return (
-		<Box>
+		<Box className='h-full flex items-center justify-center'>
 			<Button
-				title='Новости'
-				onPress={() => navigation.navigate('News')}
+				title='Перейти в Профиль'
+				onPress={() => navigation.navigate('profile')}
 			/>
 			<Button
-				title='Кошелек'
-				onPress={() => navigation.navigate('Wallet')}
+				title='Открыть модальное окно'
+				onPress={() => navigation.navigate('modal')}
 			/>
 		</Box>
 	)
